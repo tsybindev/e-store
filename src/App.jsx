@@ -62,7 +62,17 @@ function Catalog() {
 }
 
 function Product() {
-	return <li>item</li>
+	const products = [...productData]
+	return (
+		<li>
+			<img src={products[2].photoName} alt={products[2].name} />
+			<div>
+				<h3>{products[2].name}</h3>
+				<p>{products[2].description}</p>
+				<span>{products[2].price}</span>
+			</div>
+		</li>
+	)
 }
 
 function Footer() {
