@@ -51,9 +51,9 @@ function Header() {
 	const isOpen = hour >= openHours && hour <= closeHours
 
 	return (
-		<header>
+		<header className='header'>
 			<h1>Электронный магазин 🛒</h1>
-			<nav>
+			<nav className='nav'>
 				<ul>
 					<li>
 						<a href='#home'>Home</a>
@@ -86,8 +86,8 @@ function Header() {
 
 function Catalog() {
 	return (
-		<main>
-			<ul>
+		<main className='catalog'>
+			<ul className='products'>
 				<Product />
 			</ul>
 		</main>
@@ -97,7 +97,7 @@ function Catalog() {
 function Product() {
 	const products = [...productData]
 	return (
-		<li>
+		<li className='product'>
 			<img src={products[2].photoName} alt={products[2].name} />
 			<div>
 				<h3>{products[2].name}</h3>
@@ -109,7 +109,7 @@ function Product() {
 }
 
 function Footer() {
-	return <footer>Footer</footer>
+	return <footer className='footer'>Footer</footer>
 }
 
 function App() {
