@@ -44,9 +44,42 @@ const productData = [
 ]
 
 function Header() {
+	const hour = new Date().getHours()
+	const openHours = 9
+	const closeHours = 21
+
+	const isOpen = hour >= openHours && hour <= closeHours
+
 	return (
 		<header>
 			<h1>Электронный магазин 🛒</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href='#home'>Home</a>
+					</li>
+					<li>
+						<a href='#catalog'>Catalog</a>
+					</li>
+					<li>
+						<a href='#about'>About</a>
+					</li>
+					<li>
+						<a href='#contacts'>Contacts</a>
+					</li>
+				</ul>
+			</nav>
+			<div>
+				{isOpen ? (
+					<p>
+						We are currently open. Hours: {openHours}:00 - {closeHours}:00
+					</p>
+				) : (
+					<p>
+						We are closed. Open from: {openHours}:00 - {closeHours}:00
+					</p>
+				)}
+			</div>
 		</header>
 	)
 }
