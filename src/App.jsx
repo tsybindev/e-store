@@ -46,7 +46,7 @@ const productData = [
 function Header() {
 	return (
 		<header>
-			<h1>Электронный магазин</h1>
+			<h1>Электронный магазин 🛒</h1>
 		</header>
 	)
 }
