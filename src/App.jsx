@@ -90,21 +90,33 @@ function Catalog() {
 	return (
 		<main className='catalog'>
 			<ul className='products'>
-				<Product />
+				<Product
+					name='Wireless Headphones'
+					img='/headphones.png'
+					price={200}
+					description='Noise-cancelling headphones with great sound quality.'
+				/>
+				<Product
+					name='Smartphone X'
+					img='/smartphone.png'
+					price={800}
+					description='Latest model with stunning display.'
+				/>
 			</ul>
 		</main>
 	)
 }
 
-function Product() {
-	const products = [...productData]
+function Product(props) {
+	console.log(props)
+
 	return (
 		<li className='product'>
-			<img src={products[2].photoName} alt={products[2].name} />
+			<img src={props.img} alt={props.name} />
 			<div>
-				<h3>{products[2].name}</h3>
-				<p>{products[2].description}</p>
-				<span>{products[2].price}</span>
+				<h3>{props.name}</h3>
+				<p>{props.description}</p>
+				<span>{props.price}</span>
 			</div>
 		</li>
 	)
