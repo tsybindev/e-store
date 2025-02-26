@@ -129,11 +129,11 @@ function Footer() {
 
 function App() {
 	return (
-		<div>
+		<>
 			<Header />
 			<Catalog />
 			<Footer />
-		</div>
+		</>
 	)
 }
 
