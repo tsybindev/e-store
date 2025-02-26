@@ -90,33 +90,34 @@ function Catalog() {
 	return (
 		<main className='catalog'>
 			<ul className='products'>
-				<Product
+				{productData.map((product, index) => (
+					<Product key={index} {...product} />
+				))}
+				{/* <Product
 					name='Wireless Headphones'
-					img='/headphones.png'
+					photoName='/headphones.png'
 					price={200}
 					description='Noise-cancelling headphones with great sound quality.'
 				/>
 				<Product
 					name='Smartphone X'
-					img='/smartphone.png'
+					photoName='/smartphone.png'
 					price={800}
 					description='Latest model with stunning display.'
-				/>
+				/> */}
 			</ul>
 		</main>
 	)
 }
 
-function Product(props) {
-	console.log(props)
-
+function Product({ name, photoName, description, price }) {
 	return (
 		<li className='product'>
-			<img src={props.img} alt={props.name} />
+			<img src={photoName} alt={name} />
 			<div>
-				<h3>{props.name}</h3>
-				<p>{props.description}</p>
-				<span>{props.price}</span>
+				<h3>{name}</h3>
+				<p>{description}</p>
+				<span>{price}</span>
 			</div>
 		</li>
 	)
