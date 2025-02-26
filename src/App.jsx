@@ -71,7 +71,7 @@ function Header() {
 					</li>
 				</ul>
 			</nav>
-			<div>
+			<div className='working-hours'>
 				{isOpen ? (
 					<p>
 						We are currently open. Hours: {openHours}:00 - {closeHours}:00
@@ -110,8 +110,20 @@ function Catalog() {
 	)
 }
 
-function Product({ name, photoName, description, price }) {
+function Product({ name, photoName, description, price, soldOut }) {
+	if (soldOut) return null
 	return (
+		// !soldOut && (
+		// 	<li className='product'>
+		// 		<img src={photoName} alt={name} />
+		// 		<div>
+		// 			<h3>{name}</h3>
+		// 			<p>{description}</p>
+		// 			<span>{price}</span>
+		// 		</div>
+		// 	</li>
+		// )
+
 		<li className='product'>
 			<img src={photoName} alt={name} />
 			<div>
